@@ -6,10 +6,6 @@
     "Key": {"Map": "Value"}
   },
   "Parameters": {
-    "KeyPairName":{
-      "Type":"AWS::EC2::KeyPair::KeyName",
-      "Description":"Name of an existing EC2 KeyPair to enable SSH access to the ECS instances."
-    },
     "VpcId":{
       "Type":"AWS::EC2::VPC::Id",
       "Description":"Select a VPC that allows instances to access the Internet."
@@ -350,10 +346,7 @@
           {
             "Ref": "InstanceSecurityGroup"
           }
-        ],
-        "KeyName": {
-          "Ref": "KeyPairName"
-        }
+        ]
       }
     },
     "WebTaskDefinition": {
